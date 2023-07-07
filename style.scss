@@ -6,6 +6,16 @@
 img {
   display: block;
   max-width: 100%;
+  max-width: 100%;
+}
+// Device
+$m-device: 376px;
+@mixin d($size) {
+  @if $size == m {
+    @media screen and (max-width: $m-device) {
+      @content;
+    }
+  }
 }
 // Colors
 $gradient-violet: hsl(273, 75%, 66%);
@@ -30,15 +40,25 @@ body {
   main {
     display: grid;
     grid-template-columns: repeat(2, 500px);
-    padding: 30px 60px 30px 0px;
+    min-height: 550px;
     background-color: white;
     border-radius: 20px;
+    @include d(m) {
+      grid-template-columns: 350px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
   }
 }
 .box-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
   h1 {
     margin-bottom: 20px;
     font-weight: 700;
+    margin-bottom: 30px;
   }
   .container {
     border-bottom: 2px solid hsl(240, 5%, 91%);
@@ -50,6 +70,7 @@ body {
       justify-content: space-between;
       h2 {
         font-size: 1rem;
+        font-weight: 400;
         color: $text0;
         margin-bottom: 15px;
         &:hover {
@@ -64,6 +85,58 @@ body {
     p {
       margin-bottom: 15px;
       color: $text1;
+      display: none;
+      transform: translateY(-20px);
     }
+  }
+}
+// Classe para Accordio list
+.ativo {
+  display: block !important;
+  animation: show 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.rotacao {
+  transform: rotate(180deg);
+}
+.ajuste-titulo {
+  font-weight: 700 !important;
+}
+// Left
+.img-section {
+  position: relative;
+  // background: url("/images/bg-pattern-desktop.svg");
+  // background-repeat: no-repeat;
+  // background-size: 100%;
+  // background-position: top 1rem left -2rem;
+}
+.img-section-center {
+  overflow-x: hidden;
+}
+.container-img {
+  display: block;
+  margin-top: 5.7rem;
+  margin-left: -4.8rem;
+  overflow: hidden;
+  @include d(m) {
+    margin-left: 0rem;
+  }
+}
+
+.container-img-2 {
+  display: block;
+  margin-left: -19%;
+  margin-top: -51%;
+  @include d(m) {
+    margin-left: -10%;
   }
 }

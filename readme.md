@@ -12,9 +12,7 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -48,27 +46,51 @@ Users should be able to:
 
 ### What I learned
 
-Aqui eu vou escrever o que eu aprendi, como accordion list.
-
-To see how you can add code snippets, see below:
+Uma das coisas que aprendi foi a preparar o html para o accordion list, seguindo a lógica abaixo:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="container">
+  <div class="title">
+    <h2>How many team members can I invite?</h2>
+    <img src="/images/icon-arrow-down.svg" alt="icon-arrow" />
+  </div>
+  <p>
+    You can invite up to 2 additional users on the Free plan. There is no limit
+    on team members for the Premium plan.
+  </p>
+</div>
 ```
 
+Na parte do CSS eu deixei o p como display: none; e depois com ajuda do JavaScript eu adiciona a classe com o display: block;
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+p {
+  margin-bottom: 15px;
+  color: $text1;
+  display: none;
+  transform: translateY(-20px);
+}
+.ativo {
+  display: block !important;
+  animation: show 1s;
+  animation-fill-mode: forwards;
 }
 ```
 
+A parte do JavaScript eu selecionei todos os containers e adicionei um evento de click em cada evento onde eu manipulei cada item.
+
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
+// Selecionando o container
+const box = document.querySelectorAll(".container");
+box.forEach((item) => {
+  item.addEventListener("click", () => {
+    item.querySelector("p").classList.toggle("ativo");
+    item.querySelector("img").classList.toggle("rotacao");
+    item.querySelector("h2").classList.toggle("ajuste-titulo");
+  });
+});
 };
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
 ### Continued development
 
