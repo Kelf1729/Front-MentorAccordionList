@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Repo](https://github.com/Kelf1729/Front-MentorAccordionList.git)
+- Live Site URL: [Hospe](https://kelf1729.github.io/Front-MentorAccordionList/)
 
 ## My process
 
@@ -41,7 +41,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
+- Mobile
 - Javascript
 
 ### What I learned
@@ -98,5 +98,4 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@kelf1729]
