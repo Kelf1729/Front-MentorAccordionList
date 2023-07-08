@@ -109,6 +109,14 @@ boxes.forEach((box) => {
 });
 ```
 
+Segundo o CHATGPT:
+
+> No primeiro código,está usando a variável item repetidamente dentro da função de callback do evento de clique. A cada clique, o código precisa percorrer o DOM para localizar os elementos p, img e h2 usando item.querySelector. Isso significa que a busca pelos elementos precisa ser repetida para cada clique. Em casos em que você tem muitos elementos dentro do .container, isso pode afetar negativamente o desempenho.
+
+> No segundo código,se armazena os elementos p, img e h2 em variáveis separadas fora da função de callback do evento de clique. Isso significa que a busca pelos elementos só precisa ser feita uma vez para cada box no forEach. Dentro da função de callback, você pode simplesmente usar as variáveis já definidas, o que é mais eficiente.
+
+> Em resumo, o segundo código evita a necessidade de pesquisar repetidamente os elementos no DOM, tornando-o potencialmente mais eficiente em termos de desempenho. No entanto, a diferença de desempenho pode ser insignificante em casos simples como este.
+
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
