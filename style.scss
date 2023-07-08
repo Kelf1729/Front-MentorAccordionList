@@ -93,7 +93,7 @@ body {
 // Classe para Accordio list
 .ativo {
   display: block !important;
-  animation: show 1s;
+  animation: show 0.5s;
   animation-fill-mode: forwards;
 }
 @keyframes show {
@@ -138,5 +138,6 @@ body {
   margin-top: -51%;
   @include d(m) {
     margin-left: -10%;
+    margin-top: -60%;
   }
 }

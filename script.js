@@ -1,9 +1,12 @@
 // Selecionando o container
-const box = document.querySelectorAll(".container");
-box.forEach((item) => {
-  item.addEventListener("click", () => {
-    item.querySelector("p").classList.toggle("ativo");
-    item.querySelector("img").classList.toggle("rotacao");
-    item.querySelector("h2").classList.toggle("ajuste-titulo");
+const boxes = document.querySelectorAll(".container");
+boxes.forEach((box) => {
+  const paragraph = box.querySelector("p");
+  const imagem = box.querySelector("img");
+  const titulo = box.querySelector("h2");
+  box.addEventListener("click", () => {
+    paragraph.classList.toggle("ativo");
+    imagem.classList.toggle("rotacao");
+    titulo.classList.toggle("ajuste-titulo");
   });
 });
